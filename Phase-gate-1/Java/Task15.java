@@ -6,6 +6,6 @@ for(int count = 1; count < 101; count++){
 sum += count;
 
 
-System.out.print(sum)
+System.out.print(sum);
 
 }
