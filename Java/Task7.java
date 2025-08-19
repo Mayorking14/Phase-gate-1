@@ -1,4 +1,4 @@
-public class ArrayLargest{
+public class ArraySmallest{
 public static void main(String... args){
 
 
