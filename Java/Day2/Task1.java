@@ -15,6 +15,11 @@ int yearsAgo = getAgeDifference(ageOfFather, ageOfSon);
 System.out.print("The father was twice the age of the son at years ago: " + yearsAgo);
 	}
 
+
+
+
+
+
 public static int getAgeDifference(int fatherAge, int sonAge){
 
 int sonAgeDoubled = sonAge * 2;
