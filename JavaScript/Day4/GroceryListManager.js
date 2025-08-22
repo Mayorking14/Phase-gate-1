@@ -38,21 +38,21 @@ const prompt = require('prompt-sync')();
     `);
 
     switch (choice) {
-      case "1":
+      case 1:
         let itemToAdd = prompt("Enter item to add:");
         console.log(addItem(itemToAdd));
         break;
 
-      case "2":
+      case 2:
         let itemToRemove = prompt("Enter item to remove:");
         console.log(removeItem(itemToRemove));
         break;
 
-      case "3":
+      case 3:
         console.log("Items: " + displayAllItems().join(" "));
         break;
 
-      case "0":
+      case 0:
         running = false;
         console.log("Goodbye! Thanks for choosing us");
         break;

@@ -1,25 +1,17 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GroceryListManager{
 
 static ArrayList<String> itemList = new ArrayList<String>();
 
-static Scanner scanner = new Scanner(System.in);
 
-public static void main(String... arg){
+public static void main(String... args){
 
-
-
-menu();
-
-
-}
+Scanner scanner = new Scanner(System.in);
 boolean function = true;
 while(function){
-
-public static String menu(){
-
 System.out.println("""
 
 	Welcome to your grocery shopping! choose from the options below what you would like to do.
@@ -35,55 +27,57 @@ int item = scanner.nextInt();
 switch(item){
 case 1:
 	System.out.println("Add item");
-	System.out.println("Input item to add or Exit to go back to menu: ");
 	String neededlist = scanner.next();
-		itemList.add(neededlist);
-	System.out.print(itemList);
-	System.out.print("item added succesfully");
+	GroceryListManager groceryListManager = new GroceryListManager();
+	String screenOutput = groceryListManager.addItem(neededlist);
+	System.out.print(screenOutput);
+	
 		break;
+
+
+
 case 2:
 	System.out.println("Enter item to remove");
 	String removed = scanner.next();
-		itemList.remove(removed);
-	System.out.print(itemList);
-	System.out.print("item removed successfully");
-		break;
+	GroceryListManager groceryListManager1 = new GroceryListManager();
+
+	screenOutput = groceryListManager1.removeItem(removed);
+	System.out.print(screenOutput);
+	break;
+
 case 3:
-	for(int allItems = 0; allItems < itemList.size(); allItems++){
-	System.out.println(itemList.get(allItems));
-}
+	System.out.println(Arrays.toString(displayAllItem()));	
 	break;
+
 case 0:
-	function = false;
-	System.out.println("Goodbye! Thanks for choosing us.");
+	function = exit();	
 	break;
+}
+}
+}
+
+public static String addItem(String item){
+	itemList.add(item);
+	return "Done";
+}
+
+
+public static String removeItem(String item){
+	itemList.remove(item);
+	return "item removed successfully";
+}
+
+public static String[] displayAllItem(){
+	return itemList.toArray(new String[0]);
+}
+
+public static boolean exit(){
+	return false;
+}
+
 
 
 }
-	}
-	return menu();
-	}
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
